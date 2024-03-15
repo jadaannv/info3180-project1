@@ -1,0 +1,72 @@
+{% extends "base.html" %} 
+{% block main %}
+
+<h1>Add New Property</h1>
+<!--Add flash messages-->
+{% include "flash_messages.html" %}
+</br>
+<div class = "form">
+    <form action="{{url_for('propertyform')}}" method="post" enctype="multipart/form-data">
+        {{form.csrf_token}}
+
+        <div>
+            {{form.title.label (class="flabel")}}
+            <br>
+            {{form.title (class="input")}}
+        </div>
+        <br>
+        <div>
+            {{form.description.label (class ="flabel")}}
+            <br>
+            {{form.description (class="input")}} 
+        </div>
+        <br>
+        <div class="f-row">
+            <div>
+                {{form.bedrooms.label (class="flabel")}}
+                <br>
+                {{form.bedrooms}}
+
+            </div>
+            
+            <div>
+                {{form.bathrooms.label (class="flabel")}}
+                <br>
+                {{form.bathrooms}}
+            </div>
+
+        </div>
+        <br>
+        <div class="f-row">
+            <div>
+                {{form.price.label (class="flabel")}}
+                <br>
+                {{form.price}}
+            </div>
+
+            <div>
+                {{form.propertytype.label (class="flabel")}}
+                <br>
+                {{form.propertytype}}
+            </div>
+
+        </div>
+        <br>
+        <div>
+            {{form.location.label (class="flabel")}}
+            <br>
+            {{form.location}}
+        </div>
+        <br>
+        <div>
+            {{form.photo.label (class="flabel")}}
+            <br>
+            {{form.image}}
+            <br>
+            <button class ="btn btn-primary" type = "submit">Add Property</button>
+        </div>
+
+
+    </form>
+</div>
+{% endblock %}

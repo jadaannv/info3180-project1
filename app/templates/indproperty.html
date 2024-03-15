@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class = p-individual-container>
+    <div class="img-container">
+        <img src="{{url_for('get_image', filename= indproperty.image)}}" class ="ind-image" alt="Property Image"/>
+    </div> 
+    <div class="ind-body">
+        <h5>{{indproperty.title}}</h5>
+        <div class="price-type">
+            <div>{{indproperty.price}}</div>
+            <div>{{indproperty.type}}</div>
+        </div>
+        <p class="p-description"></p>
+        <div class="bed-bath">
+            <p>{{indproperty.bedrooms}} Bedrooms</p>
+            <p>{{indproperty.bathrooms}} Bathrooms</p>
+        </div>
+        <p>{{indproperty.location}}</p>
+        <button class ="butn btn-primary">Email Realtor</button>
+    </div>
+</div>
+
+{%endblock%}
